@@ -1,0 +1,1 @@
+# seniorx-integration-parameters-api
