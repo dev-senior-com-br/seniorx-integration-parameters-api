@@ -1,4 +1,4 @@
-package br.com.senior.seniorx.messaging.camel.ddb;
+package br.com.senior.seniorx.integration.parameter.ddb;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +14,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.GetItemRequest;
 
-import br.com.senior.seniorx.messaging.camel.IntegrationParameters;
+import br.com.senior.seniorx.integration.parameter.IntegrationParameters;
 
 public class CamelDDBIntegrationParameters implements IntegrationParameters {
 

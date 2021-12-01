@@ -1,4 +1,4 @@
-package br.com.senior.seniorx.messaging.camel;
+package br.com.senior.seniorx.integration.parameter;
 
 public interface IntegrationParameters {
 
