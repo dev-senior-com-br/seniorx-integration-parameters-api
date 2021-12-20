@@ -6,6 +6,8 @@ import java.util.Optional;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.spi.PropertiesComponent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
@@ -17,6 +19,8 @@ import com.amazonaws.services.dynamodbv2.model.GetItemRequest;
 import br.com.senior.seniorx.integration.parameter.IntegrationParameters;
 
 public class CamelDDBIntegrationParameters implements IntegrationParameters {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(CamelDDBIntegrationParameters.class);
 
     private final Exchange exchange;
     private final AmazonDynamoDB ddb;
@@ -51,17 +55,20 @@ public class CamelDDBIntegrationParameters implements IntegrationParameters {
     private Optional<AttributeValue> get(String parameter) {
         Object selector = exchange.getIn().getHeader("selector");
         if (selector == null) {
+            LOGGER.error("Selector header not found.");
             return Optional.empty();
         }
         String tenant = selector.toString();
 
         Map<String, AttributeValue> key = new HashMap<>();
         key.put("Tenant", new AttributeValue(tenant));
-        key.put("Key", new AttributeValue(integrationName + '-' + parameter));
+        String keyName = integrationName + ':' + parameter;
+        key.put("Key", new AttributeValue(keyName));
 
         GetItemRequest request = new GetItemRequest().withKey (key).withTableName(table);
         Map<String, AttributeValue> item = ddb.getItem(request).getItem();
         if (item == null) {
+            LOGGER.info("Parameter {} not found for tenant {} and integration {} (Key: {}).", parameter, tenant, integrationName, keyName);
             return Optional.empty();
         }
         return Optional.ofNullable(item.get("Value"));
