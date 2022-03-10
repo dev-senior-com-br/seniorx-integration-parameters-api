@@ -3,6 +3,8 @@ package br.com.senior.seniorx.integration.parameter;
 import static br.com.senior.seniorx.http.camel.PrimitiveType.QUERY;
 import static br.com.senior.seniorx.integration.parameter.GetParametersInput.GET_PARAMETERS_INPUT_FORMAT;
 import static br.com.senior.seniorx.integration.parameter.GetParametersOutput.GET_PARAMETERS_OUTPUT_FORMAT;
+import static com.google.common.base.CaseFormat.LOWER_CAMEL;
+import static com.google.common.base.CaseFormat.LOWER_HYPHEN;
 import static org.apache.camel.ExchangePattern.InOut;
 
 import java.util.UUID;
@@ -27,9 +29,9 @@ public class IntegrationPlatformAPI {
     private final String route = "direct:seniorx-integration-platform-" + id.toString();
     private final String to = "direct:seniorx-integration-platform-response-" + id.toString();
 
-    public IntegrationPlatformAPI(RouteBuilder builder, String integrationName) {
+    public IntegrationPlatformAPI(RouteBuilder builder) {
         this.builder = builder;
-        this.integrationName = integrationName;
+        this.integrationName = LOWER_CAMEL.to(LOWER_HYPHEN, builder.getClass().getSimpleName());
     }
 
     public String route() {
