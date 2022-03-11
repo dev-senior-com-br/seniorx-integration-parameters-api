@@ -3,8 +3,6 @@ package br.com.senior.seniorx.integration.parameter;
 import static br.com.senior.seniorx.http.camel.PrimitiveType.QUERY;
 import static br.com.senior.seniorx.integration.parameter.GetParametersInput.GET_PARAMETERS_INPUT_FORMAT;
 import static br.com.senior.seniorx.integration.parameter.GetParametersOutput.GET_PARAMETERS_OUTPUT_FORMAT;
-import static com.google.common.base.CaseFormat.LOWER_CAMEL;
-import static com.google.common.base.CaseFormat.LOWER_HYPHEN;
 import static org.apache.camel.ExchangePattern.InOut;
 
 import java.util.UUID;
@@ -23,15 +21,15 @@ public class IntegrationPlatformAPI {
     private static final String LOAD_PARAMETERS = "load-parameters";
     private static final String HEADERS_LOG = "${in.headers}";
 
+    private static final String INTEGRATION_ID = System.getenv("INTEGRATION_ID");
+
     private final RouteBuilder builder;
-    private final String integrationName;
     private final UUID id = UUID.randomUUID();
     private final String route = "direct:seniorx-integration-platform-" + id.toString();
     private final String to = "direct:seniorx-integration-platform-response-" + id.toString();
 
     public IntegrationPlatformAPI(RouteBuilder builder) {
         this.builder = builder;
-        this.integrationName = LOWER_CAMEL.to(LOWER_HYPHEN, builder.getClass().getSimpleName());
     }
 
     public String route() {
@@ -80,7 +78,7 @@ public class IntegrationPlatformAPI {
         }
 
         GetParametersInput body = new GetParametersInput();
-        body.name = integrationName;
+        body.integrationId = INTEGRATION_ID;
 
         message.setBody(body);
     }

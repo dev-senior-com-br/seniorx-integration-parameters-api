@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.senior</groupId>
 	<artifactId>seniorx-integration-parameters-api</artifactId>
-	<version>0.0.5-alpha</version>
+	<version>0.0.6-alpha</version>
 	<packaging>jar</packaging>
 
 	<name>Senior X Integration Parameters API</name>
@@ -209,11 +209,6 @@
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-core-model</artifactId>
 			<version>${camel-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>31.1-jre</version>
 		</dependency>
 		<dependency>
 			<groupId>br.com.senior</groupId>

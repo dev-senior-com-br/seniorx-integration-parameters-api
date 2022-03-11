@@ -16,12 +16,12 @@ public class GetParametersInput {
 
     public static final JacksonDataFormat GET_PARAMETERS_INPUT_FORMAT = new JacksonDataFormat(GetParametersInput.class);
 
-    @JsonProperty("name")
-    public String name;
+    @JsonProperty("integrationId")
+    public String integrationId;
 
     @Override
     public String toString() {
-        return "GetParametersInput [name=" + name + "]";
+        return "GetParametersInput [integrationId=" + integrationId + "]";
     }
 
 }
