@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2022-03-11
+
 ### Added
 
 ### Changed
@@ -19,11 +21,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed project package.
+-   Fixed project package.
 
 ## [0.0.1-alpha] - 2021-11-30
 
 ### Added
 
-- Read boolean and string parameters from AWS Dynamo DB.
+-   Read boolean and string parameters from AWS Dynamo DB.
 
+[Unreleased]: https://github.com/dev-senior-com-br/seniorx-integration-parameters-api/compare/1.0.0...HEAD
+
+[1.0.0]: https://github.com/dev-senior-com-br/seniorx-integration-parameters-api/compare/0.0.2-alpha...1.0.0
