@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.senior</groupId>
 	<artifactId>seniorx-integration-parameters-api</artifactId>
-	<version>0.0.6-alpha</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>Senior X Integration Parameters API</name>
@@ -213,7 +213,7 @@
 		<dependency>
 			<groupId>br.com.senior</groupId>
 			<artifactId>seniorx-http-camel-api</artifactId>
-			<version>0.0.27-alpha</version>
+			<version>1.0.0</version>
 		</dependency>
 
 		<dependency>
