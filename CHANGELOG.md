@@ -13,19 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [ARQPTF-5141](https://jira.senior.com.br/browse/ARQPTF-5141) - Refactor do *domain* e *service* do backend para `integration/management`.
-
 ### Removed
 
-## [0.0.2-alpha] - 2021-12-01
+## [1.0.1] - 2022-04-07
 
 ### Fixed
 
-- Fixed project package.
+- [ARQPTF-5141](https://jira.senior.com.br/browse/ARQPTF-5141) - Refactor do *domain* e *service* do backend para `integration/management`.
 
-## [0.0.1-alpha] - 2021-11-30
+## [1.0.0] - 2022-03-11
 
 ### Added
 
-- Read boolean and string parameters from AWS Dynamo DB.
-
+- Read parameters from AWS Dynamo DB.
