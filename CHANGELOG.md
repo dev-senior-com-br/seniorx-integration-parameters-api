@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [ARQPTF-5141](https://jira.senior.com.br/browse/ARQPTF-5141) - Refactor do *domain* e *service* do backend para `integration/management`.
+
 ### Removed
 
 ## [0.0.2-alpha] - 2021-12-01
