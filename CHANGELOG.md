@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2022-04-07
+
 ### Added
 
 ### Changed
@@ -19,10 +21,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [ARQPTF-5141](https://jira.senior.com.br/browse/ARQPTF-5141) - Refactor do *domain* e *service* do backend para `integration/management`.
+-   [ARQPTF-5141](https://jira.senior.com.br/browse/ARQPTF-5141) - Refactor do _domain_ e _service_ do backend para `integration/management`.
 
 ## [1.0.0] - 2022-03-11
 
 ### Added
 
-- Read parameters from AWS Dynamo DB.
+-   Read parameters from AWS Dynamo DB.
+
+[Unreleased]: https://github.com/dev-senior-com-br/seniorx-integration-parameters-api/compare/1.0.1...HEAD
+
+[1.0.1]: https://github.com/dev-senior-com-br/seniorx-integration-parameters-api/compare/1.0.1...1.0.1
