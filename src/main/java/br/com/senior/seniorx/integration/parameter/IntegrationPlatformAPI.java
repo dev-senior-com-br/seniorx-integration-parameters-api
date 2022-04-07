@@ -15,11 +15,14 @@ import br.com.senior.seniorx.http.camel.SeniorXHTTPRouteBuilder;
 
 public class IntegrationPlatformAPI {
 
-    private static final String PLATFORM = "platform";
-    private static final String INTEGRATION_PLATFORM = "integration_platform";
+    private static final String HTTP_METHOD_POST = "post";
+    private static final String DOMAIN = "integration";
+    private static final String SERVICE = "management";
+    private static final String PRIMITIVE = "getParameters";
 
     private static final String LOAD_PARAMETERS = "load-parameters";
     private static final String HEADERS_LOG = "${in.headers}";
+    private static final String HEADER_AUTHORIZATION = "Authorization";
 
     private static final String INTEGRATION_ID = System.getenv("INTEGRATION_ID");
 
@@ -43,11 +46,11 @@ public class IntegrationPlatformAPI {
     public void prepare() {
         SeniorXHTTPRouteBuilder getParameters = new SeniorXHTTPRouteBuilder(builder);
         getParameters //
-        .method("post") //
-        .domain(PLATFORM) //
-        .service(INTEGRATION_PLATFORM) //
+        .method(HTTP_METHOD_POST) //
+        .domain(DOMAIN) //
+        .service(SERVICE) //
         .primitiveType(QUERY) // .
-        .primitive("getParameters");
+        .primitive(PRIMITIVE);
 
         builder //
         .from(route) //
@@ -73,7 +76,7 @@ public class IntegrationPlatformAPI {
     private void prepareGetParameters(Exchange exchange) {
         Message message = exchange.getMessage();
 
-        if (message.getHeader("Authorization") == null) {
+        if (message.getHeader(HEADER_AUTHORIZATION) == null) {
             throw new IntegrationPlatformException("Not authencitaced");
         }
 
